@@ -1,5 +1,4 @@
 import React from "react";
-import {useState} from "react";
 import logo from "../../assets/log-photo.jpg";
 const Login = () => {
   return (
