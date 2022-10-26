@@ -11,7 +11,7 @@ const Navbar = () => {
           <a href="" className="mr-[10rem]">
             About
           </a>
-          <a href="" className="mr-[10rem]">
+          <a href="https://github.com/mucahitkarakus" className="mr-[10rem]">
             GıtHub
           </a>
           <a href="" className="mr-[10rem]">
