@@ -1,9 +1,15 @@
 import React from "react";
 import {useState} from "react";
+import logo from "../../assets/log-photo.jpg";
 const Login = () => {
   return (
     <div className="logcontainer flex  items-center justify-center  ">
-      <div className="flex flex-col items-center justify-center border rounded-full w-[30rem] h-[30rem] bg-blue-300  ">
+      <div className="flex flex-col items-center justify-center   w-[30rem] h-[30rem]   ">
+        <img
+          src={logo}
+          alt="logo"
+          className="w-[13rem] h-[10rem] rounded-full mb-5 "
+        />
         <input
           type="text"
           name="nick"
