@@ -6,11 +6,11 @@ const Details = () => {
   const {state: detail} = useLocation();
   console.log(detail);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-blue-200 ">
       <Navbar />
       <p className="text-3xl text-center mt-5 font-semibold">{detail.label}</p>
-      <div className="flex justify-evenly items-center h-[30rem] flex-wrap">
-        <ul>
+      <div className=" flex justify-evenly items-center h-[30rem] flex-wrap mt-10">
+        <ul className="mt-5 font-semibold">
           <p className="text-xl">Nutriens</p>
           <li>Calcium: {detail.digest[5].total.toFixed()}mg</li>
           <li>Carbs: {detail.digest[1].total.toFixed()}g</li>
@@ -30,7 +30,7 @@ const Details = () => {
           />
         </div>
         <ul className="mt-5">
-          <p className="text-xl ">Recipe</p>
+          <p className="text-xl font-semibold">Recipe</p>
           {detail.ingredientLines.map((item, idx) => (
             <li key={idx}> {item}</li>
           ))}

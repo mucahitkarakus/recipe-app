@@ -6,21 +6,22 @@ const About = () => {
       <div>
         <div className="flex justify-center flex-col items-center mt-[5rem]">
           <img
-            src="https://media2.giphy.com/media/jTNG3RF6EwbkpD4LZx/giphy.gif"
+            src="https://camo.githubusercontent.com/07e0b24d090820dcb96f901613ac5e7f6daab72303306a0751b6b2f271f2c7c2/68747470733a2f2f7468756d62732e6766796361742e636f6d2f4578656d706c6172794661697246656c696e652d6d61782d316d622e676966"
             alt=""
             width="350px"
           />
           <div className="text-center w-[25rem] ">
+            <p className="mt-10">
+              I'm Mücahit, a full-time Full-Stack Developer 👨‍💻
+            </p>
             <p className="text-2xl mt-5 font-semibold  ">
-              My name is <span className="text-red-600">Mustafa</span> , 18
-              years old React developer from Turkey
+              🔭 I’m currently student at bootcamp Clarusway
             </p>
 
             <p className="text-xl mt-5 leading-8">
-              In high school i start to learn coding and software things little
-              and little until today, and in april 2022, I start to learn
-              front-end finally I'm learning reactjs.
+              🌱 I’m currently learning Full Stack Development
             </p>
+            <p>❓ I'm 25 years old, from Turkey. learning enthusiast.</p>
           </div>
         </div>
       </div>

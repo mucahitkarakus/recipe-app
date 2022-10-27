@@ -13,7 +13,7 @@ const RecipeCard = ({data}) => {
         className="rounded-lg"
       />
       <button
-        className="rounded-lg bg-black text-white p-1 w-[5rem] mt-2"
+        className="rounded-lg bg-blue-400 text-white p-1 w-[5rem] mt-2"
         onClick={() => navigate("/details", {state: data.recipe})}
       >
         Details
