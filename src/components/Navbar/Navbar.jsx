@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className=" bg-blue-300">
       <div className="flex justify-between items-center  ">
         <div className="m-5 font-semibold text-[20px]">
-          <a href="/home">Recipe</a>
+          <NavLink to="/home">Recipe</NavLink>
         </div>
         <div className="font-semibold text-[20px]">
           <NavLink to="/About" className="mr-[10rem]">

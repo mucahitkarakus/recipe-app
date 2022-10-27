@@ -5,8 +5,9 @@ const Form = () => {
     <div className="flex items-center justify-center">
       <div className="">
         <input
-          className="bg-blue-400 border-none m-[20px] h-[40px] w-[200px] rounded-xl text-white outline-none  "
+          className="bg-blue-400 border-none m-[20px] h-[40px] w-[200px] rounded-xl text-white outline-none placeholder-white  "
           type="text"
+          placeholder="Search"
         />
       </div>
       <div>
