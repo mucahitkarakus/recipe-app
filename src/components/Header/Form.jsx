@@ -1,34 +1,68 @@
-import React from "react";
+import {useState, useEffect} from "react";
+import axios from "axios";
+import RecipeCard from "../../pages/Home/RecipeCard";
 
 const Form = () => {
+  const [searchBar, setSearchBar] = useState(null);
+  const [meal, setMeal] = useState(null);
+  const [data, setData] = useState(null);
+
+  const api_key = "8a73009571cb02899f2e2400ce448e72	";
+  const app_id = "91a8071c";
+
+  const getApi = () => {
+    axios
+      .get(
+        `https://api.edamam.com/search?q=${searchBar}&app_id=${app_id}&app_key=${api_key}&mealType=${meal}`
+      )
+      .then((res) => {
+        console.log(res.data.hits);
+        setData(res.data.hits);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getApi();
+  }, []);
+
   return (
-    <div className="flex items-center justify-center">
-      <div className="">
-        <input
-          className="bg-blue-400 border-none m-[20px] h-[40px] w-[200px] rounded-xl text-white outline-none placeholder-white  "
-          type="text"
-          placeholder="Search"
-        />
-      </div>
-      <div>
-        <button className="text-white bg-blue-400 h-[40px] w-[100px] rounded-xl ">
+    <>
+      <div className="flex justify-center items-center mt-5 flex-wrap ">
+        <div className="flex gap-3">
+          <input
+            type="text"
+            className="bg-blue-400 placeholder-white border-none outline-none text-white p-2 rounded-lg "
+            placeholder="Search"
+            onChange={(e) => {
+              setSearchBar(e.target.value);
+            }}
+          />
+
+          <select
+            className="rounded-lg bg-blue-400 text-white p-1"
+            onChange={(e) => {
+              setMeal(e.target.value);
+            }}
+          >
+            <option value="breakfast">Breakfast</option>
+            <option value="brunch">Brunch</option>
+            <option value="lunch">Lunch/Dinner</option>
+            <option value="snack">Snack</option>
+            <option value="teatime">Teatime</option>
+          </select>
+        </div>
+        <button
+          className="rounded-lg bg-blue-400 text-white p-2 w-[5rem] ml-5"
+          onClick={() => getApi()}
+        >
           Search
         </button>
       </div>
-      <div className="ml-5">
-        <select
-          name=""
-          id=""
-          className="w-[150px] h-[40px] text-white bg-blue-400 rounded-xl  "
-        >
-          <option value="">Breakfast</option>
-          <option value="">Brunch</option>
-          <option value="">Lunch</option>
-          <option value="">Dinner</option>
-          <option value="">TeaTime</option>
-        </select>
+      <div className="flex flex-wrap items-center justify-center ">
+        {data && data.map((item, idx) => <RecipeCard data={item} key={idx} />)}
       </div>
-    </div>
+    </>
   );
 };
 

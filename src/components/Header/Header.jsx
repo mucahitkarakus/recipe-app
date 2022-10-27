@@ -1,13 +1,12 @@
-import React from "react";
 import Form from "./Form";
-import RecipeCard from "../../pages/Home/RecipeCard";
 
 const Header = () => {
   return (
-    <div className="">
-      <h1 className="text-center font-semibold text-[50px] mt-5  ">Food App</h1>
-      <Form />
-      <RecipeCard />
+    <div>
+      <p className="text-3xl text-center mt-5">Food App</p>
+      <div className="">
+        <Form />
+      </div>
     </div>
   );
 };

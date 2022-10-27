@@ -1,22 +1,23 @@
-import React from "react";
-import {useNavigate} from "react-router";
-const RecipeCard = () => {
-  const detailNavigate = useNavigate();
+import {useNavigate} from "react-router-dom";
+
+const RecipeCard = ({data}) => {
+  const navigate = useNavigate();
+  console.log(data.recipe);
   return (
-    <div className="">
-      <div className="bg-blue-400 w-[250px] h-[350px] rounded-xl flex flex-col items-center justify-center ">
-        <img
-          src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg"
-          alt=""
-          className="w-[150px] rounded-xl "
-        />
-        <button
-          onClick={() => detailNavigate("/details")}
-          className="mt-10 bg-white w-[10rem] h-[2rem] rounded-[20px] text-blue-400 "
-        >
-          Details
-        </button>
-      </div>
+    <div className="flex flex-col justify-center  items-center  mt-5   w-[30rem] text-center">
+      <p className="text-xl mb-5">{data.recipe.label}</p>
+      <img
+        src={data.recipe.image}
+        alt=""
+        width="150px"
+        className="rounded-lg"
+      />
+      <button
+        className="rounded-lg bg-black text-white p-1 w-[5rem] mt-2"
+        onClick={() => navigate("/details", {state: data.recipe})}
+      >
+        Details
+      </button>
     </div>
   );
 };
